@@ -3662,3 +3662,51 @@ main {
   width: 100%;
   height: 100%;
 }
+
+/* Clients that trust us: slow, endless logo scroll. The logo set is in the
+   markup twice, so moving the track by half its width loops seamlessly. */
+.logo-strip {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 40px,
+    #000 calc(100% - 40px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 40px,
+    #000 calc(100% - 40px),
+    transparent
+  );
+}
+.logo-marquee {
+  display: flex;
+  flex-shrink: 0;
+  animation: logo-scroll 60s linear infinite;
+}
+.logo-set {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px;
+}
+.logo-strip:hover .logo-marquee {
+  animation-play-state: paused;
+}
+@keyframes logo-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    animation: none;
+  }
+  .logo-strip {
+    overflow-x: auto;
+  }
+}
