@@ -3710,3 +3710,9 @@ main {
     overflow-x: auto;
   }
 }
+/* The moving track is its own layer, so Figma's luminosity blend no longer
+   greys the logos; make them greyscale directly. */
+.logo-strip img {
+  mix-blend-mode: normal;
+  filter: grayscale(1);
+}
