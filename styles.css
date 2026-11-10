@@ -4415,3 +4415,120 @@ a {
   line-height: normal;
   color: #2c3e50;
 }
+
+/* Bestsellers: product tiles at the PDP "Comparable products" standard (270 x 451px) */
+.bestseller-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+.bestseller-row::-webkit-scrollbar {
+  display: none;
+}
+.pcard {
+  position: relative;
+  flex-shrink: 0;
+  width: 270px;
+  height: 451.404px;
+  background: #fff;
+  border: 1.137px solid #e8edf1;
+  border-radius: 6.823px;
+  scroll-snap-align: start;
+  color: #2c3e50;
+  font-family: "Nunito", sans-serif;
+  transition: box-shadow 0.3s ease-out;
+}
+.pcard:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.pcard > * {
+  position: absolute;
+  left: 15.92px;
+  right: 16.3px;
+  margin: 0;
+}
+.pcard-img {
+  top: 15.92px;
+  height: 172.843px;
+  background: #f0f2f4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.pcard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pcard-pill {
+  position: absolute;
+  left: 7.96px;
+  top: 7.96px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 3.411px 10.234px;
+  font-weight: 600;
+  font-size: 12.51px;
+  color: #000;
+}
+.pcard-title {
+  top: 202.41px;
+  font-weight: 700;
+  font-size: 14.78px;
+  line-height: 20.696px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.pcard-meta {
+  top: 254.45px;
+  font-size: 13.65px;
+  line-height: 25.926px;
+}
+.pcard-price {
+  top: 316.07px;
+  font-weight: 800;
+  font-size: 17.06px;
+}
+.pcard-allin {
+  top: 338.82px;
+  font-size: 12.51px;
+  color: #787575;
+}
+.pcard-btn {
+  top: 367.25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11.371px;
+  background: #66bc29;
+  border-radius: 5.686px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15.124px;
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+.pcard-btn:hover {
+  background: #5aa823;
+}
+.pcard-btn:focus-visible,
+.pcard-title a:focus-visible {
+  outline: 2px solid #0091b4;
+  outline-offset: 2px;
+}
+.pcard-delivery {
+  top: 416.14px;
+  font-size: 12.51px;
+  color: #787575;
+}
+.pcard-delivery {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
