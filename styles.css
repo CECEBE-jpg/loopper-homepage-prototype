@@ -3386,3 +3386,14 @@ main {
     scroll-behavior: auto;
   }
 }
+
+/* Review cards: the "Read customer story" card used a stretched 69px
+   rectangle as avatar; match the round 38px avatar of the other cards, and
+   drop the pale strip that sat behind the name only. */
+.x191 {
+  width: 38px;
+  border-radius: 50%;
+}
+.x174 {
+  background-color: transparent;
+}
