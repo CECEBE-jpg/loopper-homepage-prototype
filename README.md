@@ -11,4 +11,4 @@ Open `index.html` in a browser. There is no build step.
 - `nav.css`, `nav.js`: navigation copied from the SEO product page prototype
 - `assets/`: images and icons exported from Figma
 
-The layout is the fixed 1536px desktop frame. A small script scales it down on narrower screens; there is no dedicated mobile layout yet.
+The desktop layout is the fixed 1536px frame (Figma `298:590`), scaled down to fit narrower screens. Below 768px a separate mobile layout (Figma `303:1033`, 390px wide, scaled to the screen width) is shown instead; its rows swipe sideways. The header is the SEO prototype navigation on all sizes.

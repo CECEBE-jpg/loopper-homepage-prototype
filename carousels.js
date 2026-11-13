@@ -88,9 +88,27 @@
     update();
   }
 
+  // Mobile layout: rows that run past the screen edge become swipeable
+  // (no arrows on phones). A row is a horizontal flex container that is
+  // wider inside than out.
+  function mobileRows() {
+    var mp = document.getElementById('mp');
+    if (!mp || !mp.offsetWidth) return;
+    var all = mp.querySelectorAll('div');
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i], cs = getComputedStyle(el);
+      if (el.classList.contains('m-row') || el.closest('.logo-strip')) continue;
+      if (cs.display.indexOf('flex') > -1 && cs.flexDirection === 'row' && el.scrollWidth > el.clientWidth + 1) {
+        el.classList.add('m-row');
+      }
+    }
+  }
+
   function init() {
     var imgs = document.querySelectorAll('#main img[src="' + ARROW + '"]');
     for (var i = 0; i < imgs.length; i++) setup(imgs[i]);
+    mobileRows();
+    addEventListener('resize', mobileRows);
   }
 
   if (document.readyState === 'complete') init();
